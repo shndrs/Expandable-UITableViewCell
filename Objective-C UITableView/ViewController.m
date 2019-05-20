@@ -16,8 +16,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.navigationItem.title = @"Ibanez Guitars";
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    
+    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"TableViewCell"];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell" forIndexPath:indexPath];
+    
+    cell.textLabel.text = @"rg2550e 2007 Team J. Craft";
+    return cell;
+}
 
 @end
