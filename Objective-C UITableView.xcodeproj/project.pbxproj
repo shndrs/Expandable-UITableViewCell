@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F42185552293E0BF001F96F2 /* ExpandableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42185542293E0BF001F96F2 /* ExpandableCell.xib */; };
+		F42185582293E187001F96F2 /* ExpandableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F42185572293E187001F96F2 /* ExpandableCell.m */; };
 		F4456D65229283A200469597 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4456D64229283A200469597 /* AppDelegate.m */; };
 		F4456D68229283A200469597 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4456D67229283A200469597 /* ViewController.m */; };
 		F4456D6B229283A200469597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4456D69229283A200469597 /* Main.storyboard */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F42185542293E0BF001F96F2 /* ExpandableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableCell.xib; sourceTree = "<group>"; };
+		F42185562293E187001F96F2 /* ExpandableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpandableCell.h; sourceTree = "<group>"; };
+		F42185572293E187001F96F2 /* ExpandableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpandableCell.m; sourceTree = "<group>"; };
 		F4456D60229283A200469597 /* Objective-C UITableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objective-C UITableView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4456D63229283A200469597 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4456D64229283A200469597 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,6 +47,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F42185592293E18D001F96F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F42185542293E0BF001F96F2 /* ExpandableCell.xib */,
+				F42185562293E187001F96F2 /* ExpandableCell.h */,
+				F42185572293E187001F96F2 /* ExpandableCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F421855A2293E1A2001F96F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F4456D66229283A200469597 /* ViewController.h */,
+				F4456D67229283A200469597 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F4456D57229283A200469597 = {
 			isa = PBXGroup;
 			children = (
@@ -61,10 +85,10 @@
 		F4456D62229283A200469597 /* Objective-C UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				F421855A2293E1A2001F96F2 /* Controller */,
+				F42185592293E18D001F96F2 /* View */,
 				F4456D63229283A200469597 /* AppDelegate.h */,
 				F4456D64229283A200469597 /* AppDelegate.m */,
-				F4456D66229283A200469597 /* ViewController.h */,
-				F4456D67229283A200469597 /* ViewController.m */,
 				F4456D69229283A200469597 /* Main.storyboard */,
 				F4456D6C229283A400469597 /* Assets.xcassets */,
 				F4456D6E229283A400469597 /* LaunchScreen.storyboard */,
@@ -136,6 +160,7 @@
 				F4456D70229283A400469597 /* LaunchScreen.storyboard in Resources */,
 				F4456D6D229283A400469597 /* Assets.xcassets in Resources */,
 				F4456D6B229283A200469597 /* Main.storyboard in Resources */,
+				F42185552293E0BF001F96F2 /* ExpandableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42185582293E187001F96F2 /* ExpandableCell.m in Sources */,
 				F4456D68229283A200469597 /* ViewController.m in Sources */,
 				F4456D73229283A400469597 /* main.m in Sources */,
 				F4456D65229283A200469597 /* AppDelegate.m in Sources */,
