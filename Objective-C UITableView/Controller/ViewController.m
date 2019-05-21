@@ -7,7 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "Guitars.h"
+#import "ExpandableCell.h"
+
+// @"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", @"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings"
+
+//@"1499 US$", @"1999 US$", @"2499 US$", @"1999 US$", @"1799 US$", @"2999 US$", @"1199 US$", @"1699 US$"
 
 @interface ViewController ()
 
@@ -17,10 +21,53 @@
 
 @implementation ViewController
 
+@synthesize arrRowBrand,arrRowNumberOfStrings,arrRowPrice,tableView,selectedIndex;
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    selectedIndex = -1;
     
+    arrRowBrand = [[NSMutableArray alloc]init];
+    for (int i = 0; i <= 7; i++) {
+        NSString *string = [[NSString alloc]initWithFormat:@"Ibanez rg277%i",i];
+        
+        [arrRowBrand addObject:string];
+    }
+    
+    arrRowNumberOfStrings = [[NSMutableArray alloc]initWithObjects:@"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", @"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", nil];
+    
+    arrRowPrice = [[NSMutableArray alloc]initWithObjects:@"1499 US$", @"1999 US$", @"2499 US$", @"1999 US$", @"1799 US$", @"2999 US$", @"1199 US$", @"1699 US$", nil];
+}
 
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return arrRowBrand.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ExpandableCell *cell = (ExpandableCell *)[tableView dequeueReusableCellWithIdentifier:@"ExpandableCell"];
+    
+    if (cell == nil) {
+        NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"ExpandableCell" owner:self options:nil];
+        cell=[nib objectAtIndex:0];
+    }
+    
+    cell.brandTitleLabel = arrRowBrand[indexPath.row];
+    cell.numberOfStringsTitleLabel = arrRowNumberOfStrings[indexPath.row];
+    cell.priceTitleLabel = arrRowPrice[indexPath.row];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
 }
 
 

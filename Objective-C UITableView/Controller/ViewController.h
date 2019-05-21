@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong, nonatomic) NSMutableArray *arrRowBrand;
+@property (strong, nonatomic) NSMutableArray *arrRowNumberOfStrings;
+@property (strong, nonatomic) NSMutableArray *arrRowPrice;
+
+@property int selectedIndex;
 
 @end
 
