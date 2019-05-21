@@ -16,6 +16,8 @@
 
 NSString *const cellId = @"ExpandableCell";
 NSString *const navTitle = @"Electric Guitars";
+NSString *const sevenStrings = @"7 Strings";
+NSString *const sixStrings = @"6 Strings";
 @synthesize arrRowBrand,arrRowNumberOfStrings,arrRowPrice,tableView,selectedIndex;
 
 - (void)viewDidLoad {
@@ -42,7 +44,7 @@ NSString *const navTitle = @"Electric Guitars";
         [arrRowBrand addObject:string];
     }
     
-    arrRowNumberOfStrings = [[NSMutableArray alloc]initWithObjects:@"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", @"7 Strings", @"7 Strings", @"8 Strings", @"8 Strings", @"6 Strings", @"6 Strings", nil];
+    arrRowNumberOfStrings = [[NSMutableArray alloc]initWithObjects:sevenStrings, sevenStrings, sixStrings, sixStrings, sevenStrings, sixStrings, sevenStrings, sevenStrings, sevenStrings, sixStrings, nil];
     
     arrRowPrice = [[NSMutableArray alloc]initWithObjects:@"1499 US$", @"1999 US$", @"2499 US$", @"1999 US$", @"1799 US$", @"2999 US$", @"1199 US$", @"1699 US$", @"1499 US$", @"1999 US$", nil];
 }
