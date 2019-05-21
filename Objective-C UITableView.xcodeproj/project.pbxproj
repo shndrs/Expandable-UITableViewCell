@@ -15,7 +15,6 @@
 		F4456D6D229283A400469597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4456D6C229283A400469597 /* Assets.xcassets */; };
 		F4456D70229283A400469597 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4456D6E229283A400469597 /* LaunchScreen.storyboard */; };
 		F4456D73229283A400469597 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4456D72229283A400469597 /* main.m */; };
-		F4456D7B22928C7D00469597 /* Guitars.m in Sources */ = {isa = PBXBuildFile; fileRef = F4456D7A22928C7D00469597 /* Guitars.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +31,6 @@
 		F4456D6F229283A400469597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4456D71229283A400469597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4456D72229283A400469597 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F4456D7922928C7D00469597 /* Guitars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Guitars.h; sourceTree = "<group>"; };
-		F4456D7A22928C7D00469597 /* Guitars.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Guitars.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +89,16 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		F421856322940A23001F96F2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F4456D72229283A400469597 /* main.m */,
+				F4456D63229283A200469597 /* AppDelegate.h */,
+				F4456D64229283A200469597 /* AppDelegate.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		F4456D57229283A200469597 = {
 			isa = PBXGroup;
 			children = (
@@ -111,15 +118,11 @@
 		F4456D62229283A200469597 /* Objective-C UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				F421856322940A23001F96F2 /* Other */,
 				F421855B2293E3FE001F96F2 /* Resources */,
 				F421855A2293E1A2001F96F2 /* Controller */,
 				F42185592293E18D001F96F2 /* View */,
-				F4456D63229283A200469597 /* AppDelegate.h */,
-				F4456D64229283A200469597 /* AppDelegate.m */,
 				F4456D71229283A400469597 /* Info.plist */,
-				F4456D72229283A400469597 /* main.m */,
-				F4456D7922928C7D00469597 /* Guitars.h */,
-				F4456D7A22928C7D00469597 /* Guitars.m */,
 			);
 			path = "Objective-C UITableView";
 			sourceTree = "<group>";
@@ -199,7 +202,6 @@
 				F4456D68229283A200469597 /* ViewController.m in Sources */,
 				F4456D73229283A400469597 /* main.m in Sources */,
 				F4456D65229283A200469597 /* AppDelegate.m in Sources */,
-				F4456D7B22928C7D00469597 /* Guitars.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

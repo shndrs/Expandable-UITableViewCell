@@ -10,27 +10,29 @@
 #import "ExpandableCell.h"
 
 @interface ViewController ()
-
-
-
 @end
 
 @implementation ViewController
 
+NSString *const cellId = @"ExpandableCell";
+NSString *const navTitle = @"Electric Guitars";
 @synthesize arrRowBrand,arrRowNumberOfStrings,arrRowPrice,tableView,selectedIndex;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self registerCell];
     [self setNavigationBar];
     [self setData];
+    [self reloadTableView];
 }
 
 -(void)setNavigationBar {
-    self.navigationItem.title = @"Ibanez Guitars";
+    self.navigationItem.title = navTitle;
     self.navigationController.navigationBar.prefersLargeTitles = YES;
 }
 
 - (void)setData {
+    
     selectedIndex = -1;
     
     arrRowBrand = [[NSMutableArray alloc]init];
@@ -40,12 +42,12 @@
         [arrRowBrand addObject:string];
     }
     
-    arrRowNumberOfStrings = [[NSMutableArray alloc]initWithObjects:@"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", @"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", @"6 Strings", @"6 Strings", nil];
+    arrRowNumberOfStrings = [[NSMutableArray alloc]initWithObjects:@"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", @"7 Strings", @"7 Strings", @"8 Strings", @"8 Strings", @"6 Strings", @"6 Strings", nil];
     
     arrRowPrice = [[NSMutableArray alloc]initWithObjects:@"1499 US$", @"1999 US$", @"2499 US$", @"1999 US$", @"1799 US$", @"2999 US$", @"1199 US$", @"1699 US$", @"1499 US$", @"1999 US$", nil];
-    
 }
 
+// MARK: TableView DataSource Delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -57,10 +59,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ExpandableCell *cell = (ExpandableCell *)[tableView dequeueReusableCellWithIdentifier:@"ExpandableCell"];
+    ExpandableCell *cell = (ExpandableCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
     
     if (cell == nil) {
-        NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"ExpandableCell" owner:self options:nil];
+        NSArray *nib=[[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil];
         cell=[nib objectAtIndex:0];
     }
     
@@ -78,7 +80,6 @@
     } else {
         return 40;
     }
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -93,6 +94,18 @@
     }
     selectedIndex = indexPath.row;
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+-(void)registerCell {
+    [tableView setDelegate:self];
+    [tableView setDataSource:self];
+    [tableView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellReuseIdentifier:cellId];
+}
+
+-(void)reloadTableView {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->tableView reloadData];
+    });
 }
 
 @end

@@ -27,10 +27,6 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="jsP-d1-Ra6" id="QoU-DC-xM0"/>
-                            <outlet property="delegate" destination="jsP-d1-Ra6" id="o6Y-dc-TPk"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ng1-TJ-Acu"/>
                     <connections>
