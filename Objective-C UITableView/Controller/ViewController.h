@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *arrRowNumberOfStrings;
 @property (strong, nonatomic) NSMutableArray *arrRowPrice;
 
-@property int selectedIndex;
+@property NSInteger selectedIndex;
 
 @end
 

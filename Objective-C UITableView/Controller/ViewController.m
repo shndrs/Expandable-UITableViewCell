@@ -9,10 +9,6 @@
 #import "ViewController.h"
 #import "ExpandableCell.h"
 
-// @"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", @"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings"
-
-//@"1499 US$", @"1999 US$", @"2499 US$", @"1999 US$", @"1799 US$", @"2999 US$", @"1199 US$", @"1699 US$"
-
 @interface ViewController ()
 
 
@@ -23,27 +19,31 @@
 
 @synthesize arrRowBrand,arrRowNumberOfStrings,arrRowPrice,tableView,selectedIndex;
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setNavigationBar];
     [self setData];
+}
+
+-(void)setNavigationBar {
+    self.navigationItem.title = @"Ibanez Guitars";
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
 }
 
 - (void)setData {
     selectedIndex = -1;
     
     arrRowBrand = [[NSMutableArray alloc]init];
-    for (int i = 0; i <= 7; i++) {
+    for (int i = 0; i <= 9; i++) {
         NSString *string = [[NSString alloc]initWithFormat:@"Ibanez rg277%i",i];
         
         [arrRowBrand addObject:string];
     }
     
-    arrRowNumberOfStrings = [[NSMutableArray alloc]initWithObjects:@"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", @"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", nil];
+    arrRowNumberOfStrings = [[NSMutableArray alloc]initWithObjects:@"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", @"7 Strings", @"7 Strings", @"6 Strings", @"6 Strings", @"6 Strings", @"6 Strings", nil];
     
-    arrRowPrice = [[NSMutableArray alloc]initWithObjects:@"1499 US$", @"1999 US$", @"2499 US$", @"1999 US$", @"1799 US$", @"2999 US$", @"1199 US$", @"1699 US$", nil];
+    arrRowPrice = [[NSMutableArray alloc]initWithObjects:@"1499 US$", @"1999 US$", @"2499 US$", @"1999 US$", @"1799 US$", @"2999 US$", @"1199 US$", @"1699 US$", @"1499 US$", @"1999 US$", nil];
+    
 }
 
 
@@ -74,7 +74,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (selectedIndex == indexPath.row) {
-        return 100;
+        return 274;
     } else {
         return 40;
     }
@@ -94,6 +94,5 @@
     selectedIndex = indexPath.row;
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
-
 
 @end
