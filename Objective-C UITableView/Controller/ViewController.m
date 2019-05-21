@@ -27,6 +27,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setData];
+}
+
+- (void)setData {
     selectedIndex = -1;
     
     arrRowBrand = [[NSMutableArray alloc]init];
