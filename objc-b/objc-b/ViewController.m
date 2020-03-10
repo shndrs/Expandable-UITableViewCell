@@ -35,7 +35,7 @@
     
     float test = [unitPriceObject floatValue] + 5;
     
-    NSString *blurb = [NSString stringWithFormat:@"You have selected %@,\r\n made by %@ it a %i strings guitar and the price is: %.2f USD", productTitle, manufacturer, stringsNumber, price];
+    NSString *blurb = [NSString stringWithFormat:@"You have selected %@ %s,\r\n made by %@ it's a %i strings guitar and the price is: %.2f USD", productTitle, model, manufacturer, stringsNumber, price];
     NSLog(@"%@", blurb);
     
     
