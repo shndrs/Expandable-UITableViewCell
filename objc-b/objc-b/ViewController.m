@@ -16,7 +16,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSString *productTitle = @"Ibanez Prestige";
+    NSString *manufacturer = @"Ibanez Incorporation";
+    NSString *longHand = [NSString stringWithUTF8String:"Ibanez Prestige"];
+    
+    char model[] = "2550e Team J. Craft";
+    
+    int stringsNumber = 6;
+    int quantity = 134;
+    float price = 1099.4;
+    
+    float unitPrice = price/quantity;
+    
+    NSNumber *unitPriceObject = [NSNumber numberWithFloat:unitPrice];
+    
+    NSArray *priceArray = @[@(unitPrice)];
+    
+    float test = [unitPriceObject floatValue] + 5;
+    
+    NSString *blurb = [NSString stringWithFormat:@"You have selected %@,\r\n made by %@ it a %i strings guitar and the price is: %.2f USD", productTitle, manufacturer, stringsNumber, price];
+    NSLog(@"%@", blurb);
+    
+    
 }
 
 
