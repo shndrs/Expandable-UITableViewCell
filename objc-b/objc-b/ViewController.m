@@ -19,6 +19,7 @@
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     dispatch_async(queue, ^{
+        
         NSString *productTitle = @"Ibanez Prestige";
         NSString *manufacturer = @"Ibanez Incorporation";
         NSString *longHand = [NSString stringWithUTF8String:"Ibanez Prestige"];
@@ -41,6 +42,7 @@
         NSLog(@"%@", blurb);
        
         // MARK: - Collection Types
+        /// - Note: Array, Dictionary
        
         NSDictionary *bostonDict = @{@"City":@"Boston", @"Country":@"USA"};
        
@@ -58,14 +60,26 @@
         [guitarDict addEntriesFromDictionary:@{@"NumberOfStrings":@(7)}];
        
         NSArray *shitArray = @[mutBostonDict, guitarDict];
-       
+        
         NSLog(@"%@", shitArray);
+        
+        NSUInteger i = [shitArray count];
+        NSUInteger j = shitArray.count;
+        
+        NSArray *objectAtIndex = [shitArray objectAtIndex:1];
+        
+        NSLog(@"\n array's count: %lu \n array's count: %lu \n Object At Index: %@",(unsigned long)i, (unsigned long)j, objectAtIndex);
+        
+        NSString *guitarModel = [[shitArray objectAtIndex:1] valueForKey:@"Model"];
+        
+        NSLog(@"Guitar model at index 1 is: %@", guitarModel);
+        
+        int noOfStrings = [[[shitArray objectAtIndex:1] valueForKey:@"NumberOfStrings"] intValue];
+        
+        NSLog(@"Number of strings is: %i", noOfStrings);
+        
     });
     
-    
-   
-        
 }
-
 
 @end
