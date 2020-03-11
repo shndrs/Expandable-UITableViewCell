@@ -86,6 +86,26 @@
         
 //        NSArray <NSString *> * stringArray;
         
+        // MARK: - Control Flow
+        /// Note: - Conditionals, Loops, Operators and etc
+        
+        int nu = 2;
+        
+        if (nu < 3) {
+            nu = 5;
+        } else {
+            nu = 0;
+        }
+        
+        for (int i = 0; i >= 10; i++) {
+            int j = 78;
+            NSLog(@"===> %i \n", j * i);
+        }
+        
+        for (NSString *name in nameArray) {
+            NSLog(@"===> %@ \n", name.uppercaseString);
+        }
+        
     });
     
 }
