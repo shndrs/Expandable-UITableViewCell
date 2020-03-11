@@ -37,6 +37,16 @@
     
     NSString *blurb = [NSString stringWithFormat:@"You have selected %@ %s,\r\n made by %@ it's a %i strings guitar and the price is: %.2f USD", productTitle, model, manufacturer, stringsNumber, price];
     NSLog(@"%@", blurb);
+    
+    // MARK: - Collection Types
+    
+    NSDictionary *bostonDict = @{@"City":@"Boston", @"Country":@"USA"};
+    
+    NSMutableDictionary *mutBostonDict = [[NSMutableDictionary alloc] initWithDictionary: bostonDict];
+    
+    NSString *beantown = [bostonDict valueForKey:@"City"];
+    [mutBostonDict setValue:@"Italy" forKey:@"Country"];
+    [mutBostonDict setValue:@"Milan" forKey:@"City"];
         
 }
 
