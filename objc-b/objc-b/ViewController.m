@@ -78,6 +78,14 @@
         
         NSLog(@"Number of strings is: %i", noOfStrings);
         
+        NSMutableArray *nameArray = [[NSMutableArray alloc] initWithObjects:@"Ibanez", @"Schecter", @"Ormsby", @"Kiesel", nil];
+        
+        [nameArray addObject:@"Aviator"];
+        [nameArray removeObjectAtIndex:3];
+        [nameArray replaceObjectAtIndex:2 withObject:@"Skervesen"];
+        
+//        NSArray <NSString *> * stringArray;
+        
     });
     
 }
